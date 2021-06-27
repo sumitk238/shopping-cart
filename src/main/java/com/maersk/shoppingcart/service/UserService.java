@@ -5,6 +5,9 @@ import com.maersk.shoppingcart.jpa.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Sumit Kumar
+ */
 @Service
 public class UserService {
 

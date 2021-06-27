@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author Sumit Kumar
+ */
 @Entity(name = "users")
 @SuppressWarnings("unused")
 public class User {

@@ -5,6 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * @author Sumit Kumar
+ */
 @SuppressWarnings("unused")
 @Entity(name = "products")
 public class Product {

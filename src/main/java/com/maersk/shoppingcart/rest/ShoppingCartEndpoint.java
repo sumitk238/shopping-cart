@@ -43,8 +43,7 @@ public class ShoppingCartEndpoint {
     }
 
     /**
-     *  @returns
-     *      all items in users cart with cumulative cost
+     * @returns all items in users cart with cumulative cost
      */
     @GetMapping("/{userId}")
     public CartDetails getCartDetailsForUser(@PathVariable Integer userId) {
@@ -54,8 +53,7 @@ public class ShoppingCartEndpoint {
     }
 
     /**
-     * @returns
-     *      Quantity of products of given Id in users cart, zero if not present
+     * @returns Quantity of products of given Id in users cart, zero if not present
      */
     @GetMapping("/{userId}/{productId}/")
     public Integer getCountOfItemInCart(@PathVariable Integer userId, @PathVariable Integer productId) {
@@ -65,8 +63,7 @@ public class ShoppingCartEndpoint {
     }
 
     /**
-     * clears the given product from users cart
-     * throws exception if not present
+     * clears the given product from users cart throws exception if not present
      */
     @DeleteMapping("/{userId}/{productId}/")
     public void deleteItemFromCart(@PathVariable Integer userId, @PathVariable Integer productId) {
@@ -84,7 +81,7 @@ public class ShoppingCartEndpoint {
             @RequestParam Integer changed) {
         logger.debug("Updating product : {} count by {} in user : {} cart", productId, changed, userId);
         validateUserAndProduct(userId, productId);
-        if(changed == 0) {
+        if (changed == 0) {
             throw new InvalidDataException("Changed should not be zero !!");
         }
         cartService.updateCart(userId, productId, changed);
@@ -101,7 +98,8 @@ public class ShoppingCartEndpoint {
         logger.debug("Adding product : {} with quantity : {} to user : {} cart", productId, quantity, userId);
         // perform validations : ensure user and product exists and valid quantity value
         if (quantity <= 0 && quantity > itemMaxAllowed) {
-            throw new InvalidDataException("Quantity should be greater than zero and less than " + itemMaxAllowed + " !!");
+            throw new InvalidDataException(
+                    "Quantity should be greater than zero and less than " + itemMaxAllowed + " !!");
         }
         validateUserAndProduct(userId, productId);
 

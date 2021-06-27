@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 
+/**
+ * @author Sumit Kumar
+ */
 @IdClass(CartPrimaryKey.class)
 @Entity(name = "carts")
 @SuppressWarnings("unused")

@@ -3,6 +3,9 @@ package com.maersk.shoppingcart.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author Sumit Kumar
+ */
 @SuppressWarnings("unused")
 public class CartPrimaryKey implements Serializable {
 

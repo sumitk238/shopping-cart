@@ -1,7 +1,11 @@
 package com.maersk.shoppingcart.dto;
 
+/**
+ * @author Sumit Kumar
+ */
 @SuppressWarnings("unused")
 public class ProblemDetails {
+
     private String reason;
 
     public String getReason() {

@@ -29,7 +29,18 @@
 ### Non Functional Requirements supported :
 1. Swagger Integration to view/test REST APIs exposed by application.
 2. Spring Actuator/Micrometer integration to see basic app metrics.
-3. Junits with more than 90% line coverage.
+3. Junits with more than 90% line coverage of business logic (ignoring entities and dtos).
+
+### Technogies Used :
+1. Java 11
+2. Gradle 7.0.2
+3. Spring Boot 2.5.2
+4. Spring JPA which uses hibernate under the hood
+5. MySQL for DB
+6. Docker compose for running MySQL in container.
+7. Swagger 2 for API Documentation.
+8. Spring Actuator / Micrometer for monitoring
+9. Junit 5 for unit tests
 
 ### Steps to run MySQL DB :
 1. We are running mysql inside docker container.
@@ -44,12 +55,13 @@
 
 ### Steps to run app : 
 1. Checkout code from github repo.
-2. Run mysql DB as explained in last section. 
-3. Run the following command to run the application, 
+2. Run mysql DB as explained in last section.
+3. Set Java Home to JAVA 11.
+4. Run the following command to run the application, 
    this will also run the junits `./gradlew clean build && java -jar build/libs/shopping-cart-0.0.1-SNAPSHOT.jar`
-4. All the APIs are secured using Basic Auth and Credentials are `admin/password`
-5. Go to Swagger URL to test APIs: http://localhost:8080/swagger-ui.html
-5. Application also exposes some metrics at a separate port 9001 for security reasons, metrics can be seen at 
+5. All the APIs are secured using Basic Auth and Credentials are `admin/password`
+6. Go to Swagger URL to test APIs: http://localhost:8080/swagger-ui.html
+7. Application also exposes some metrics at a separate port 9001 for security reasons, metrics can be seen at 
    Spring actuator endpoint : http://localhost:9001/actuator/prometheus
    
 ### Enhancements :
@@ -57,10 +69,12 @@
 2. Add more Swagger Annotation so that Swagger UI can guide users with sample data, all possible return HTTP codes etc.
 3. Make app run inside container by adding a `DockerFile` and include this as second container 
    after mysql in `docker-compose.yml`
+4. Add service discovery and service registration via Spring Eureka
+5. Add support for circuit breaker via Spring Hystrix.
    
 ## References :
 * https://spring.io/guides/gs/accessing-data-mysql/
 * https://medium.com/@chrischuck35/how-to-create-a-mysql-instance-with-docker-compose-1598f3cc1bee#:~:text=In%20your%20command%20line%20or,instance%20running%20on%20localhost%3A3306%20.
 * https://www.baeldung.com/spring-boot-actuators
-
+* https://spring.io/guides/gs/actuator-service/
 

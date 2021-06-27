@@ -16,11 +16,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+/**
+ * @author Sumit Kumar
+ */
 @RestControllerAdvice(assignableTypes = {ShoppingCartEndpoint.class})
 public class ShoppingCartExceptionHandler {
 
-    private static final Logger logger = LoggerFactory.getLogger(ShoppingCartExceptionHandler.class);
     public static final String INTERNAL_SERVER_ERROR_MESSAGE = "Something went wrong !! Please try later !!";
+    private static final Logger logger = LoggerFactory.getLogger(ShoppingCartExceptionHandler.class);
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)

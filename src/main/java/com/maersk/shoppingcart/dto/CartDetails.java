@@ -2,6 +2,9 @@ package com.maersk.shoppingcart.dto;
 
 import java.util.List;
 
+/**
+ * @author Sumit Kumar
+ */
 @SuppressWarnings("unused")
 public class CartDetails {
 

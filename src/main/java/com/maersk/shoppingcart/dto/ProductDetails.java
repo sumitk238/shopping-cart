@@ -1,5 +1,8 @@
 package com.maersk.shoppingcart.dto;
 
+/**
+ * @author Sumit Kumar
+ */
 @SuppressWarnings("unused")
 public class ProductDetails {
 
