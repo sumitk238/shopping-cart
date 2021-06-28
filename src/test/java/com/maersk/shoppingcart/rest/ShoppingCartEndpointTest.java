@@ -39,7 +39,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * @author Sumit Kumar
  */
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, properties = {"spring.profiles.active:test"})
 public class ShoppingCartEndpointTest {
 
     private static final Integer TEST_USER_ID = 1;

@@ -20,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
  * @author Sumit Kumar
  */
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT, properties = {"spring.profiles.active:test"})
 public class WebSecurityConfigTest {
 
     @Autowired
